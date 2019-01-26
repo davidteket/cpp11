@@ -1,4 +1,4 @@
-###Leírás - Please scroll down to find the english equivalent of the text that follows
+### Leírás - Please scroll down to find the english equivalent of the text that follows
 
 Ez a projekt a Bjarne Stroupstrup-féle "A C++ Programozási Nyelv - 4-ik Kiadás" című könyvhöz
 mellékelt gyakorlati feladatokra készített megoldásaimat tartalmazza.
@@ -6,7 +6,7 @@ ISBN: `ISBN-13: 978-0-321-56384-2`
 
 A projekt a következőkben taglaltak szerint épül fel.
 
-###1. Eszközök
+### 1. Eszközök
 
   - Operációs Rendszer:     `Linux Mint 18.3 Sylvia (MATE 64bit)`
   - Fordító:                `gcc (Ubuntu 5.4.0-6ubuntu1~16.04.11) 5.4.0 20160609`
@@ -16,7 +16,7 @@ A projekt a következőkben taglaltak szerint épül fel.
   - Állomány Készítés:      `GNU Make 4.1`
   - LaTeX - PDF Szerkesztő: `Kile 2.1.3`
 
-###2. Megoldások
+### 2. Megoldások
 
   A megoldások struktúrálása a következő jegyzék-séma szerint:
 
@@ -38,7 +38,7 @@ A projekt a következőkben taglaltak szerint épül fel.
     `EN_exercise.pdf`
     `HU_gyakorlat.pdf`
 
-###3. Dokumentumok
+### 3. Dokumentumok
 
 Bár a projektben előforduló `*.pdf` dokumentumokat a Kile LaTeX szerkesztővel állítom elő,
 az egyszerűsítés kedvéért magukat a `*.tex` fájlokat nem tartalmazza a projekt _kivéve ha a megoldás nem kód hanem dokumentum_.
@@ -52,7 +52,7 @@ A forráskódokban kommenteket csak nem-triviális esetben írok, és azt is a k
   `// Valamely nem-triviális osztály / függvény stb. leírása.`
   `//`
 
-###4. Validáció
+### 4. Validáció
 
 Az elkészített megoldásokat minden esetben véglegesítem a `Google Test` keretrendszer használatával,
 azaz egység teszteket írok hozzájuk, melyek igazolják az elkészített kód helyességét.
@@ -60,7 +60,7 @@ azaz egység teszteket írok hozzájuk, melyek igazolják az elkészített kód 
 Tehát `git push` csak abban az esetben, ha az adott gyakorlat teljesen késznek számít,
 és az egység tesztek is 100%-os hibamentességgel lefutottak.
 
-###Description
+### Description
 
 This project contains my solutions to the exercises attached to Bjarne Stroupstrup's book
 "The C++ Programming Language 4th Edition".
@@ -68,7 +68,7 @@ ISBN: `ISBN-13: 978-0-321-56384-2`
 
 The project is being built by the following descriptions.
 
-###1. Tools
+### 1. Tools
 
   - Operating System:      `Linux Mint 18.3 Sylvia (MATE 64bit)`
   - Compiler:              `gcc (Ubuntu 5.4.0-6ubuntu1~16.04.11) 5.4.0 20160609`
@@ -78,7 +78,7 @@ The project is being built by the following descriptions.
   - Executeable:           `GNU Make 4.1`
   - LaTeX - PDF Editor:    `Kile 2.1.3`
 
-###2. Solutions
+### 2. Solutions
 
   The solutions are being structured by the following directory-scheme:
 
@@ -99,7 +99,7 @@ The project is being built by the following descriptions.
     `EN_exercise.pdf`
     `HU_gyakorlat.pdf`
 
-###3. Documents
+### 3. Documents
 
 While every `*.pdf` document will be produced with the Kile LaTeX editor, for simplification
 purposes the individual `*.tex` files will not be included _except if the solution is not code but document_.
@@ -113,7 +113,7 @@ In source code, comments are only used in non-trivial cases by the following sch
   `// Valamely nem-triviális osztály / függvény stb. leírása.`
   `//`
 
-###4. Validation
+### 4. Validation
 
 I validate the completed solutions by using the `Google Test` framework,
 so I write unit tests for each of them to confirm whether my code produces valid output.
