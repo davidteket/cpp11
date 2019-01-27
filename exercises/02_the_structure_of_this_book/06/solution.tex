@@ -1,0 +1,52 @@
+\documentclass{article}
+
+\begin{document}
+ \section*{Static Type Checking in C++}
+ Type checking is being performed at \textsl{compile time} and \textbf{no type checking will be perfored at runtime}.
+ $\Rightarrow$ No Type information is being used at runtime.
+ \subsection*{Strength}
+ No overhead at runtime, so if a structure is being defined with 4 double floating point numbers (2x8 bytes)
+ \\
+ then, that will perfectly fit into a 32 bit register.
+ \subsection*{Weakness}
+ No support against polymorphic objects, and only narrowing conversions can be made against types
+ that are statically being checked.
+ 
+ \section*{Dynamic Type Checking in C++}
+ Compilers that implement \textbf{RTTI} (\textsl{RunTime Type Information}) can deal with
+ \texttt{dynamic\_cast} and \texttt{typeid},
+ \\
+ where: 
+ \begin{itemize}
+  \item \textbf{dynamic\_cast} is responsible for casting an object (eg.: a pointer) 
+  \\
+  from type of \textbf{T} to type of \textbf{U}. If the conversion is not possible,
+  then the result will be null. A typical use would be to check whether one type 
+  \\
+  is a base type of another type:
+  \\
+  \\
+  $\Rightarrow$ \texttt{Circle* c = dynamic\_cast<Circle*> shape; // shape could be of any type}
+  \\
+  \texttt{// if shape is a base type of circle, then the cast can be made}
+  \item \textbf{typeid} retrieves the class name of an object.
+  \\
+  It uses RTTI if the type of an object is not known at compile time
+  \\
+  (eg.: a polymorphic object's pointer):
+  \\
+  \\
+  $\Rightarrow$ \texttt{Person* p = \&employee;}
+  \\
+  $\Rightarrow$ \texttt{std::cout << typeid(p).Name() << std::endl; // looked up at runtime}
+ \end{itemize}
+ \subsection*{Strength}
+ RTTI provides great support for polymorphic types
+ and templates.
+ 
+ \subsection*{Weakness}
+ RTTI implies overhead at runtime, so additional bytes of data needs to be stored,
+ as well as time required to lookup type information in a given case.
+ This feature should be used sparingly.
+ 
+\end{document}
