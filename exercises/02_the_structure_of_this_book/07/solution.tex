@@ -1,0 +1,105 @@
+\documentclass[10pt]{article}
+\begin{document}
+ \section*{List the major components of the C++ Standard Library} 
+ \texttt{dt@VPCF11M1E ~/2019/c++11/exercises/02\_the\_structure\_of\_this\_book/07 \$ ls -l /usr/include/c++/5/\\}
+ \\
+ \\
+   \begin{tabular}{|l|c|r|}
+    -rw-r--r-- 1 root root &  2518 Aug 27 23:15 & algorithm\\
+    -rw-r--r-- 1 root root &  9951 Aug 27 23:15 & array\\
+    -rw-r--r-- 1 root root & 37554 Aug 27 23:15 & atomic\\
+    drwxr-xr-x 2 root root &  4096 Dec 18 02:47 & backward\\
+    drwxr-xr-x 2 root root & 20480 Dec 18 02:47 & bits\\
+    -rw-r--r-- 1 root root & 45950 Aug 27 23:15 & bitset\\
+    -rw-r--r-- 1 root root &  1620 Aug 27 23:15 & cassert\\
+    -rw-r--r-- 1 root root &  1318 Aug 27 23:15 & ccomplex\\
+    -rw-r--r-- 1 root root &  2409 Aug 27 23:15 & cctype\\
+    -rw-r--r-- 1 root root &  1742 Aug 27 23:15 & cerrno\\
+    -rw-r--r-- 1 root root &  2051 Aug 27 23:15 & cfenv\\
+    -rw-r--r-- 1 root root &  1861 Aug 27 23:15 & cfloat\\
+    -rw-r--r-- 1 root root & 26690 Aug 27 23:15 & chrono\\
+    -rw-r--r-- 1 root root &  2157 Aug 27 23:15 & cinttypes\\
+    -rw-r--r-- 1 root root &  1490 Aug 27 23:15 & ciso646\\
+    -rw-r--r-- 1 root root &  1885 Aug 27 23:15 & climits\\
+    -rw-r--r-- 1 root root &  1905 Aug 27 23:15 & clocale\\
+    -rw-r--r-- 1 root root & 44874 Aug 27 23:15 & cmath\\
+    -rw-r--r-- 1 root root &  5336 Aug 27 23:15 & codecvt\\
+    -rw-r--r-- 1 root root & 53877 Aug 27 23:15 & complex\\
+    -rw-r--r-- 1 root root &  1461 Aug 27 23:15 & complex.h\\
+    -rw-r--r-- 1 root root &  8604 Aug 27 23:15 & condition\_variable\\
+    -rw-r--r-- 1 root root &  1949 Aug 27 23:15 & csetjmp\\
+    -rw-r--r-- 1 root root &  1855 Aug 27 23:15 & csignal\\
+    -rw-r--r-- 1 root root &  1407 Aug 27 23:15 & cstdalign\\
+    -rw-r--r-- 1 root root &  1844 Aug 27 23:15 & cstdarg\\
+    -rw-r--r-- 1 root root &  1401 Aug 27 23:15 & cstdbool\\
+    -rw-r--r-- 1 root root &  1824 Aug 27 23:15 & cstddef\\
+    -rw-r--r-- 1 root root &  2167 Aug 27 23:15 & cstdint\\
+    -rw-r--r-- 1 root root &  4395 Aug 27 23:15 & cstdio\\
+    -rw-r--r-- 1 root root &  6597 Aug 27 23:15 & cstdlib\\
+    -rw-r--r-- 1 root root &  3123 Aug 27 23:15 & cstring\\
+    -rw-r--r-- 1 root root &  1343 Aug 27 23:15 & ctgmath\\
+    -rw-r--r-- 1 root root &  2125 Aug 27 23:15 & ctime\\
+    -rw-r--r-- 1 root root &  6497 Aug 27 23:15 & cwchar\\
+    -rw-r--r-- 1 root root &  2793 Aug 27 23:15 & cwctype\\
+    -rw-r--r-- 1 root root & 22049 Aug 27 23:15 & cxxabi.h\\
+    \end{tabular}
+     
+    \begin{tabular}{|l|c|r|}
+    drwxr-xr-x 2 root root &  4096 Dec 18 02:47 & debug\\
+    drwxr-xr-x 2 root root &  4096 Dec 18 02:47 & decimal\\
+    -rw-r--r-- 1 root root &  2665 Aug 27 23:15 & deque\\
+    -rw-r--r-- 1 root root &  5322 Aug 27 23:15 & exception\\
+    drwxr-xr-x 2 root root &  4096 Dec 18 02:47 & experimental\\
+    drwxr-xr-x 3 root root &  4096 Dec 18 02:47 & ext\\
+    -rw-r--r-- 1 root root &  2020 Aug 27 23:15 & fenv.h\\
+    -rw-r--r-- 1 root root &  1577 Aug 27 23:15 & forward\_list\\
+    -rw-r--r-- 1 root root & 33851 Aug 27 23:15 & fstream\\
+    -rw-r--r-- 1 root root & 74992 Aug 27 23:15 & functional\\
+    -rw-r--r-- 1 root root & 50283 Aug 27 23:15 & future\\
+    -rw-r--r-- 1 root root &  2974 Aug 27 23:15 & initializer\_list\\
+    -rw-r--r-- 1 root root & 16196 Aug 27 23:15 & iomanip\\
+    -rw-r--r-- 1 root root &  1601 Aug 27 23:15 & ios\\
+    -rw-r--r-- 1 root root &  6919 Aug 27 23:15 & iosfwd\\
+    -rw-r--r-- 1 root root &  2695 Aug 27 23:15 & iostream\\
+    -rw-r--r-- 1 root root & 30941 Aug 27 23:15 & istream\\
+    -rw-r--r-- 1 root root &  2644 Aug 27 23:15 & iterator\\
+    -rw-r--r-- 1 root root & 69375 Aug 27 23:15 & limits\\
+    -rw-r--r-- 1 root root &  2594 Aug 27 23:15 & list\\
+    -rw-r--r-- 1 root root &  1488 Aug 27 23:15 & locale\\
+    -rw-r--r-- 1 root root &  2559 Aug 27 23:15 & map\\
+    -rw-r--r-- 1 root root &  4303 Aug 27 23:15 & memory\\
+    -rw-r--r-- 1 root root & 19390 Aug 27 23:15 & mutex\\
+    -rw-r--r-- 1 root root &  4678 Aug 27 23:15 & new\\
+    -rw-r--r-- 1 root root &  2782 Aug 27 23:15 & numeric\\
+    -rw-r--r-- 1 root root & 20261 Aug 27 23:15 & ostream\\
+    drwxr-xr-x 2 root root &  4096 Dec 18 02:47 & parallel\\
+    drwxr-xr-x 3 root root &  4096 Dec 18 02:47 & profile\\
+    -rw-r--r-- 1 root root &  2467 Aug 27 23:15 & queue\\
+    -rw-r--r-- 1 root root &  1692 Aug 27 23:15 & random\\
+    -rw-r--r-- 1 root root & 19142 Aug 27 23:15 & ratio\\
+    -rw-r--r-- 1 root root &  1853 Aug 27 23:15 & regex\\
+    -rw-r--r-- 1 root root & 16023 Aug 27 23:15 & scoped\_allocator\\
+    -rw-r--r-- 1 root root &  2559 Aug 27 23:15 & set\\
+    -rw-r--r-- 1 root root & 17416 Aug 27 23:15 & shared\_mutex\\
+    -rw-r--r-- 1 root root & 26369 Aug 27 23:15 & sstream\\
+    -rw-r--r-- 1 root root &  2391 Aug 27 23:15 & stack\\
+    -rw-r--r-- 1 root root &  7372 Aug 27 23:15 & stdexcept\\
+    -rw-r--r-- 1 root root & 29558 Aug 27 23:15 & streambuf\\
+    -rw-r--r-- 1 root root &  1943 Aug 27 23:15 & string\\
+    drwxr-xr-x 5 root root &  4096 Jul  2  2018 sun\\
+    -rw-r--r-- 1 root root & 10884 Aug 27 23:15 & system\_error\\
+    -rw-r--r-- 1 root root &  1360 Aug 27 23:15 & tgmath.h\\
+    -rw-r--r-- 1 root root &  7728 Aug 27 23:15 & thread\\
+    drwxr-xr-x 2 root root & 12288 Dec 18 02:47 & tr1\\
+    drwxr-xr-x 2 root root &  4096 Dec 18 02:47 & tr2\\
+    -rw-r--r-- 1 root root & 38760 Aug 27 23:15 & tuple\\
+    -rw-r--r-- 1 root root &  3093 Aug 27 23:15 & typeindex\\
+    -rw-r--r-- 1 root root &  7685 Aug 27 23:15 & typeinfo\\
+    -rw-r--r-- 1 root root & 68840 Aug 27 23:15 & type\_traits\\
+    -rw-r--r-- 1 root root &  1857 Aug 27 23:15 & unordered\_map\\
+    -rw-r--r-- 1 root root &  1856 Aug 27 23:15 & unordered\_set\\
+    -rw-r--r-- 1 root root &  8477 Aug 27 23:15 & utility\\
+    -rw-r--r-- 1 root root & 40259 Aug 27 23:15 & valarray\\
+    -rw-r--r-- 1 root root &  2748 Aug 27 23:15 & vector\\
+  \end{tabular}
+\end{document}
