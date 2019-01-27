@@ -1,4 +1,17 @@
 .git
+
+# directories
 book
 googletest
 exercises/exercise_number
+
+# tex related files
+
+*.aux
+*.tex.backup
+*.log
+*.out
+
+# executeable object files
+
+*.o
