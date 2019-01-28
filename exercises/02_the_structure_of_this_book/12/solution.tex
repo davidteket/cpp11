@@ -1,0 +1,33 @@
+\documentclass{article}
+
+\begin{document}
+\section*{My top 10 list of helpful design and programming rules}
+\textbf{Design:}
+ \begin{enumerate}
+  \item  Represent ideas (concepts) directly in code, for example, as a function, a class, or an enumeration.
+  \item  Represent independent ideas separately in code, for example, avoid mutual dependencies among classes.
+  \item  Use libraries, especially the standard library, rather than trying to build everything from scratch.
+  \item  Represent independent ideas independently in code.
+  \item  Keep information local (e.g., avoid global variables, minimize the use of pointers).
+  \item  Aim for your code to be both elegant and efficient.
+  \item  Don’t overabstract.
+  \item  Represent relationships among ideas directly in code, for example, through parameterization or a class hierarchy.
+  \item  Prefer solutions that can be statically checked.
+ \end{enumerate}
+ 
+\textbf{Programming:}
+\begin{enumerate}
+ \item Use constructors to establish invariants.
+ \item Use constructor/destructor pairs to simplify resource management (RAII).
+ \item Avoid ‘‘naked’’ \texttt{new} and \texttt{delete}.
+ \item Use containers and algorithms rather than built-in arrays and ad hoc code.
+ \item Prefer standard-library facilities to locally developed code.
+ \item Use exceptions, rather than error codes, to report errors that cannot be handled locally.
+ \item Use move semantics to avoid copying large objects.
+ \item Use \texttt{unique\_ptr} to reference objects of polymorphic type.
+ \item Use \texttt{shared\_ptr} to reference shared objects, that is, objects without a single owner that is responsible for their destruction.
+ \item Use templates to maintain static type safety (eliminate casts) and avoid unnecessary use of class hierarchies.
+\end{enumerate}
+
+
+\end{document}
