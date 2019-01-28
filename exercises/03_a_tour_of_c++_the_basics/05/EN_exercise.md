@@ -1,0 +1,1 @@
+[5] (∗1) Write out a bool, a char, an int, a double, and a string.
