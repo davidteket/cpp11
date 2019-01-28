@@ -1,0 +1,80 @@
+\documentclass{article}
+
+\begin{document}
+ \section*{The Compiler's Job}
+ In computer science, the \textsl{compiler is responsible for transformation of source code to executeable machine code image}.
+ \\
+  (\texttt{source.cpp}) $\rightarrow$ (\texttt{GNU gcc}) $\rightarrow$ (\texttt{executeable.o})
+ \\
+ \\
+ Let $f$ be a function that represents the compiler. \\
+ In this case $f(S^{(n)}) = M^{(m)}$ transformation applies.
+ \\
+ $$\Rightarrow f: S^{(n)} \rightarrow M^{(m)}$$
+ $$(n < m\  [n,m \in Z])$$
+ \\
+ where $S$ is $n$ units of source code (eg.: in \texttt{C++}) taken, 
+ \\
+ and $M$ is $m$ units of machine code (eg.: in \texttt{assembly}) produced \-- which are executeable set of CPU instructions.
+ \\
+ \\
+ A compiler can be considered as a processing pipeline, which can be conceptually decomposed to the following stages:
+ \begin{enumerate}
+  \item \textbf{Front-End} \- Takes plain source code as its input (eg. \texttt{C++} code) and transforms it to an itermediate representation (\texttt{IR}) as its output.
+  \\
+  Where the main phases are:
+  \begin{itemize}
+   \item \textbf{Preprocessing} \-- Removal of any unneccesary text (eg. comments), macro substitution and conditional compilation.
+   \item \textbf{Lexical Analysis} (\texttt{tokenization})\-- Breaking down the input source code into a sequence of lexical tokens.
+   \\
+   A token has 2 components: name and value 
+   \-- where value is being assigned to the name. 
+   \\
+   The value has to be computed according to its category and type.
+   Token categories are keywords, identifiers, separators.
+   \item \textbf{Syntax Analysis} (\texttt{parsing}) \-- Builds the parse tree from a linear sequence of tokens. This tree structure must obey to the formal grammar which defines
+   the language's syntax.
+   \item \textbf{Semantic Analysis} \-- Adds semantic information to the parse tree and builds the symbol table. This step performs type checking (eg. identifying type errors)
+   and object binding which associates variables and references with their definitions.
+  \end{itemize}
+  
+  \pagebreak
+  
+  \item \textbf{Middle-End} \-- Takes the IR as its input and transforms it to Optimized Intermediate Representation (\texttt{OIR}) as its output. This stage can be skipped due
+  to its space and time requirements (eg. \texttt{debug} mode or \texttt{release} mode).
+  \\
+  Performs optimizations on the IR to improve performance the produceable machine code. 
+  Some optimizations at this stage are general \-- aka. they are independent of the target CPU architecture.
+  \\
+  \\
+  The main phases are:
+  \begin{itemize}
+   \item \textbf{Analysis} \-- Performs analytics on data-flows, dependencies, pointers. Builds the control-flow graph and the call graph.
+   \item \textbf{Optimization} \-- IR transformation to an equivalent but more efficient form. IR reduction by eliminating dead code,
+   inlining, constant propagation and loop transformation.
+   \\
+   \\
+   The above two phases results in the OIR.
+  \end{itemize}
+
+  \item \textbf{Back-End} \-- Takes OIR as its input and transforms it to machine code (eg. \texttt{assembly}, \texttt{native machine language}) as its output that is executeable
+  by the target CPU.
+  \\
+  The back end has 2 phases:
+  \begin{itemize}
+   \item \textbf{Target Machine-Dependent Optimization} \-- Further optimization options that the target CPU allows to perform.
+   \item \textbf{Machine Code Generation} \-- Transformation from OIR to native machine language.
+  \end{itemize}
+ \end{enumerate}
+ 
+ \section*{The Linker's Job}
+ In computer science, \textsl{the linker is responsible for transforming a given set of executeable machine code images into a single executteable machine code image.} 
+ Possible outputs are:
+ 
+ \begin{itemize}
+  \item \textbf{Dynamically Linked Library} \-- \texttt{.a} or \texttt{.dll} (its parts can be loaded and executed by another executeable at runtime).
+  \item \textbf{Statically Linked Library} \-- \texttt{.so} or \texttt{.lib} (it can be combined with another executeable by the linker to produce an executeable which incorporated this).
+  \item \textbf{Executeable} \-- \texttt{.o} or \texttt{.exe} (it can be launched by the hosting environment [ Operating System] and can be ran as a program).
+ \end{itemize}
+ 
+\end{document}
