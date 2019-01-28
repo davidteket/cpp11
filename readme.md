@@ -24,14 +24,21 @@ A projekt a következőkben taglaltak szerint épül fel.
 
   Az `exercise_number`, azaz a megoldást tartalmazó mappa szerkezete a következő:
 
-    `~/exercise_number/src`           - Jegyzék: `*.cpp` kiterjesztésű forráskódokat tartalmaz.
-    `~/exercise_number/include`       - Jegyzék: `*.h`   kiterjesztésű fejállományokat tartalmaz.
-    `~/exercise_number/test`          - Jegyzék: `*.cc`  kiterjesztésű egységteszt forráskódokat tartalmaz.
-    `~/exercise_number/solution`      - Jegyzék: `*.o`   kiterjesztésű végrehajtható állományt tartalmaz.
+    `~/exercise_number/include`       - Jegyzék: `*.h`            kiterjesztésű fejállományokat tartalmaz.
+    `~/exercise_number/src`           - Jegyzék: `*.cpp`          kiterjesztésű forráskódokat tartalmaz.
+    `~/exercise_number/solution`      - Jegyzék: `*.cc`           kiterjesztésű forráskódokat tartalmaz.
+    `~/exercise_number/test`          - Jegyzék: `*_unittest.cc`  postfixű és kiterjesztésű egységteszt forráskódokat tartalmaz.
+    `~/exercise_number/make`          - Jegyzék: `*.o`            kiterjesztésű végrehajtható állományokat tartalmaz.
 
     `~/exercise_number/makefile`      - Fájl:    A fordítónak kiadott `make` parancs által, a fájlban lévő
                                                  utasítások szerinti (gcc fordítás - összeszerkesztés)
-                                                 futtatható állományt készítő leírás.
+                                                 futtatható állományokat készítő leírás.
+
+
+  A `makefile`-t ebben a projektben 3 célra lehet használni:
+    1. `build`    - a megoldás elkészítésére
+    2. `unittest` - a megoldás egységtesztjeinek elkészítésére
+    3. `clean`    - a megoldás futtatható állományainak törlésére
 
   Ezen felül a feladat leírását az `~/exercise_number` tartalmazza a következőképpen:
 
@@ -85,14 +92,22 @@ The project is being built by the following descriptions.
     `~/c++11/exercises/chapter_number_chapter_title/exercise_number`
 
   The `exercise_number` directory contains the given solution which looks like this:  
+  Az `exercise_number`, azaz a megoldást tartalmazó mappa szerkezete a következő:
 
-    `~/exercise_number/src`           - Directory: contains source code files with `*.cpp` extensions.
-    `~/exercise_number/include`       - Directory: contains header files with `*.h` extensions.
-    `~/exercise_number/test`          - Directory: contains unit test source code files with `*.cc` extensions.
-    `~/exercise_number/solution`      - Directory: contains executeable binaries with `*.o` extensions.
+    `~/exercise_number/include`       - Jegyzék: `*.h`            Directory: contains header files with `*.h` extensions.
+    `~/exercise_number/src`           - Jegyzék: `*.cpp`          Directory: contains source code files with `*.cpp` extensions.
+    `~/exercise_number/solution`      - Jegyzék: `*.cc`           Directory: contains source code files with `*.cc` extensions.
+    `~/exercise_number/test`          - Jegyzék: `*_unittest.cc`  Directory: contains unit test source code files with `*_unittest.cc` postfix and extension.
+    `~/exercise_number/make`          - Jegyzék: `*.o`            Directory: contains executeable binaries with `*.o` extensions.
 
     `~/exercise_number/makefile`      - File:    By issuing `make` to the compiler, the given set of instructions
-                                                 (gcc compilation - linkage) will make the executeable binaries.                                                 
+                                                 (gcc compilation - linkage) will make the executeable binaries.
+
+
+  A `makefile` can be used in this project for 3 purposes:
+    1. `build`    - to build the solutions executeable
+    2. `unittest` - to build unit test executeables for the solution
+    3. `clean`    - to delete any executeables in the solution
 
   On top of this, the description of a given exercise can be found inside `~/exercise_number` which is:
 
