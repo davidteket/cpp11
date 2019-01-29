@@ -1,0 +1,20 @@
+\documentclass{article}
+
+\begin{document}
+ \section*{Five STL algorithms}
+ \begin{enumerate}
+  \item \texttt{find\_if(b, e, x, f)} \-- Looks for the first occurance of \textbf{x} in the range of $[b..e)$ 
+  by using \textbf{f} as the policy (\textsl{function object}) for performing the search, and returns the 
+  corresponding iterator. \textbf{c} is the container which is this algorithm performs search on.
+  \item \texttt{sort\_if(b, e, f)} \-- Sorts the contents of \textbf{c} container in the range of $[b..e)$ by using 
+  \textbf{f} as the policy (\textsl{function object}) for performing the sort operation.
+  \item \texttt{unique\_copy(b, e, b2)} \-- Gets unique elements from the container of \textbf{c} in the range of $[b..e)$ 
+  and sequentially copies them into the container of \textbf{c2} beginning with $b2$.
+  \item \texttt{push\_back(x)} \-- Extends the container of \textbf{c} by one unit of $T(x)$ and assigns \textbf{x} to that new unit.
+  The new unit takes place at the end of the container.
+  \item \texttt{begin()} or \texttt{end()} \-- begin() retrieves the iterator \textsl{referring to the first element} in the container of \textbf{c},
+  \\
+  and end() retrieves the iterator \textsl{referring to the one past last element} in the container of \textbf{c}.
+ \end{enumerate}
+
+\end{document}
