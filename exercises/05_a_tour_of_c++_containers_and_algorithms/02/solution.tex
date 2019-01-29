@@ -1,0 +1,35 @@
+\documentclass{article}
+
+\begin{document}
+ \section*{Five STL containers}
+ \begin{enumerate}
+  \item \texttt{std::vector<T>} \-- Implemented as a dynamic array of \textbf{T} elements. 
+  \\
+  Increasing or decreasing its size 
+  implies copy and move operations. 
+  \\
+  Good candidate when a container required for storing large number of elements \textsl{without heavy search load}.
+  \\
+  \textsl{Direct indexing is possible.}
+  \item \texttt{std::list<T>} \-- Implemented as a doubly-linked list of \textbf{T} nodes,
+  \\
+  where a node of $n\in(1, ..., m)$
+  knows about its \textsl{previous} and \textsl{next} nodes, while $n_{1}$ undefined for previous and $n_{m}$ undefined for next.
+  \\
+  Good candidate when a container required for storing large number of elements \textsl{with heavy element creation / deletion load.}
+  \\
+  Increasing or decreasing its size doesn't imply any reallocation and copying operations on existing elements.
+  \\
+  \textsl{Direct indexing is not possible.}
+  \item \texttt{std::map<K,V>} \-- Implemented as a balanced binary search tree of \textbf{T} nodes. Nodes are characterised by a \textsl{key} and a \textsl{value}.
+  \\
+  Good candidate when a container required for storing large number of elements \textsl{with heavy search load}.
+  \\
+  \textsl{Direct indexing is possible with keys, where the retrieval cost is $O(log(n))$.}
+  \item \texttt{std::stack<T>} \-- Implemented by following the \textsl{FILO} mechanism
+  \\
+  $\Rightarrow$ First In Last Out.
+  \item \texttt{std::set<T>} \-- Represents the mathematical term $\Rightarrow$ stores \textsl{unique} elements of \textbf{T} in a \textsl{sorted} way.
+ \end{enumerate}
+ 
+\end{document}
