@@ -1,0 +1,17 @@
+\documentclass{article}
+
+\begin{document}
+ \section*{Invariant}
+ 
+ An invariant is a \textsl{predicate} which evaluates to \texttt{true} independently (no matter) of which instruction
+ is being executed as part of a \textsl{P} program's phase. 
+ \\
+ For instance, a loop invariant $P(I)$ will always be true 
+ at the beginning and at the end in the loop's execution timeline.
+ $$\Rightarrow i_1^{\{(P(I) \rightarrow true \}} , ..., i_n^{\{(P(I) \rightarrow true \}}$$
+ where $i_j$ is the $j$th iteration of the loop.
+ \\
+ \\
+ Invariants are used to determine \textsl{program correctness}.
+ 
+\end{document}
