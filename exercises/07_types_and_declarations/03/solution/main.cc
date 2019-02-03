@@ -3,5 +3,5 @@
 int main()
 {
     Undefined();
-    //ImplementationDefined();
+    ImplementationDefined();
 }
