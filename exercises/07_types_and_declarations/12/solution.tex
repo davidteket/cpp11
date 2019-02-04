@@ -1,0 +1,29 @@
+\documentclass{article}
+
+\begin{document}
+ 
+ \section*{Longest local name that can be used in a C++ program}
+ Quote from \textbf{6.3.3}:
+ \\
+ \\
+ \textsl{C++ imposes no limit on the number of characters in a name.}
+ 
+ \section*{Restrictions on characters in names}
+ \begin{enumerate}
+  \item A name is \textsl{valid} if it \textbf{starts with} a character ($\in ASCII\}$
+  \\
+  \textbf{or} an underscore (\texttt{\_}).
+  \item A name is \textsl{invalid} if one of the following statements apply:
+  
+  \begin{enumerate}
+   \item It starts with a \textsl{number} ($\in[0..9]$). $\Rightarrow$ \texttt{12name} not allowed.
+   \item It contains \textsl{whitespace(s)}. $\Rightarrow$ \texttt{my name} not allowed.
+   \item It contains the \textsl{dot} character. $\Rightarrow$ \texttt{my.name} not allowed.
+   \item It is equivalent with a C++ \textsl{keyword}. $\Rightarrow$ \texttt{void} not allowed.
+   \item It contains \textsl{special character(s)}. $\Rightarrow$ \texttt{\~complemented} not allowed.
+  \end{enumerate}
+
+ \end{enumerate}
+
+ 
+\end{document}
