@@ -1,0 +1,26 @@
+INCLUDE = ./include
+SRC = ./src
+TEST = ./test
+GCC = g++ -std=c++11 -Wall -Wextra
+OUT = ./make
+
+NAME = type_value_min_max_limits
+
+# EN:
+# Building the executeable solution.
+#
+# HU:
+# Végrehajtható állomány előállítása.
+#
+build:
+	$(GCC) -I$(INCLUDE) \
+	$(SRC)/$(NAME).cpp ./solution/main.cc \
+	-o $(OUT)/run.o
+
+# EN:
+# Clearing executeables.
+# HU:
+# Végrehajtható állományok törlése.
+#
+clean:
+	rm $(OUT)/*.o
