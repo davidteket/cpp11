@@ -1,0 +1,76 @@
+\documentclass{article}
+
+\begin{document}
+ \section{Declarations and Definitions from \S6.3}
+ \texttt{char ch;}
+ \\
+ \texttt{string s;}
+ \\
+ \texttt{auto count = 1;}
+ \\
+ \texttt{const double pi \{3.1415926535897\};}
+ \\
+ \texttt{extern int error\_number;}
+ \\
+ \texttt{const char∗ name = "Njal";}
+ \\
+ \texttt{const char∗ season[] = \{ "spring", "summer", "fall", "winter" \};}
+ \\
+ \texttt{vector<string> people \{ name, "Skarphedin", "Gunnar" \};\}}
+ \\
+ \texttt{struct Date \{ int d, m, y; \};}
+ \\
+ \texttt{int day(Date∗ p) \{ return p−>d; \}}
+ \\
+ \texttt{double sqrt(double);}
+ \\
+ \texttt{template<class T> T abs(T a) \{ return a<0 ? −a : a; \}}
+ \\
+ \texttt{constexpr int fac(int n) \{ return (n<2)?1:n∗fac(n−1); \}}
+ \\
+ \texttt{constexpr double zz \{ ii∗fac(7) \};}
+ \\
+ \texttt{using Cmplx = std::complex<double>;}
+ \\
+ \texttt{struct User;}
+ \\
+ \texttt{enum class Beer \{ Carlsberg, Tuborg, Thor \};}
+ \\
+ \texttt{namespace NS \{ int a; \}}
+ 
+ \section{Definitions \\ (local scope [class / function] assumed)}
+ \texttt{char ch = 'a'; }
+ \\
+ \texttt{string s = \{\};}
+ \\
+ \texttt{int error\_number = 0;}
+ \\
+ \texttt{double sqrt(double z) \{ /* Newton Iteration Algorithm */ \}}
+ \\
+ \texttt{struct User \{ string name; int age; \};}
+ 
+ \section{Declarations \\ (local scope [class / function] assumed)}
+ 
+ \texttt{extern const double pi;}
+ \\
+ \texttt{extern const char* name;}
+ \\
+ \texttt{extern const char* season[];}
+ \\
+ \texttt{vector<string> people;}
+ \\
+ \texttt{extern struct Date;}
+ \\
+ \texttt{int day(Date* p);}
+ \\
+ \texttt{template<class T> T abs(T a);}
+ \\
+ \texttt{extern constexpr int fac(int n);}
+ \\
+ \texttt{extern constexpr double zz;}
+ \\
+ \texttt{extern enum class Beer;}
+ \\
+ \texttt{namespace NS \{ extern int a; \}}
+ 
+\end{document}
