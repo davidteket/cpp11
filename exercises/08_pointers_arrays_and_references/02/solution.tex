@@ -1,0 +1,32 @@
+\documentclass{article}
+
+\begin{document}
+ \section*{Restriction on pointer types: \texttt{char*}, \texttt{int*}, \texttt{void*}}
+ 
+  \textbf{dt@VPCF11M1E ~/2019/c++11/exercises/08\_pointers\_arrays\_and\_references/02 \$} \texttt{make build
+  \\g++ -std=c++11 -Wall -Wextra -I./include \
+  \\./src/pointer\_restrictions\_on\_this\_system.cpp ./solution/main.cc \
+  \\-o ./make/run.o
+  \\./src/pointer\_restrictions\_on\_this\_system.cpp: In function ‘void PointerRestrictionsOnThisSystem()’:
+  \\./src/pointer\_restrictions\_on\_this\_system.cpp:8:5: error: static assertion failed: int* cannot be casted to char* on this system
+      \\static\_assert((sizeof(char*) < sizeof(int*)), "int* cannot be casted to char* on this system");
+      \\\^
+  \\./src/pointer\_restrictions\_on\_this\_system.cpp:12:5: error: static assertion failed: void* cannot be casted to void* on this system
+      \\static\_assert((sizeof(char*) < sizeof(void*)), "void* cannot be casted to void* on this system");
+      \\\^
+  \\./src/pointer\_restrictions\_on\_this\_system.cpp:16:5: error: static assertion failed: void* cannot be casted to int*
+      \\static\_assert((sizeof(int*) < sizeof(void*)), "void* cannot be casted to int*");
+      \\\^
+  \\makefile:26: recipe for target 'build' failed
+  \\make: *** [build] Error 1}
+  \\
+ \\
+ It's clear that pointers are homogeneous, that is of $P$ is a pointer of type $T$
+ \\
+ then $P$ can be assigned to pointer $Q$ if and only if the type of $Q$ is $T$. 
+ \\
+ \\
+ This cannot be stated in every cases when assigning a \texttt{void*} to a pointer of type $T$.
+ 
+ 
+\end{document}
