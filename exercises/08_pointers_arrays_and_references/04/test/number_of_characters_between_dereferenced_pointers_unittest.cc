@@ -11,7 +11,7 @@ TEST(DistanceBetweenPointers, WorksWithBothOnBeginning)
     char* b = &s[0];
     char* e = &s[0];
 
-    EXPECT_EQ(0, NumberOfCharactersBetweenDereferencedPointers(s, b, e));
+    EXPECT_EQ(0, NumberOfCharactersBetweenDereferencedPointers(b, e));
 }
 
 TEST(DistanceBetweenPointers, WorksWithBothOnEnd)
@@ -21,7 +21,7 @@ TEST(DistanceBetweenPointers, WorksWithBothOnEnd)
     char* b = &s[s.length() - 1];
     char* e = &s[s.length() - 1];
 
-    EXPECT_EQ(0, NumberOfCharactersBetweenDereferencedPointers(s, b, e));
+    EXPECT_EQ(0, NumberOfCharactersBetweenDereferencedPointers(b, e));
 }
 
 TEST(DistanceBetweenPointers, WorksWithNormalBeginNormalEnd)
@@ -31,7 +31,7 @@ TEST(DistanceBetweenPointers, WorksWithNormalBeginNormalEnd)
     char* b = &s[0];
     char* e = &s[s.length() - 1];
 
-    EXPECT_EQ(17, NumberOfCharactersBetweenDereferencedPointers(s, b, e));
+    EXPECT_EQ(17, NumberOfCharactersBetweenDereferencedPointers(b, e));
 }
 
 TEST(DistanceBetweenPointers, WorksWithRandomBeginRandomEnd)
@@ -41,7 +41,7 @@ TEST(DistanceBetweenPointers, WorksWithRandomBeginRandomEnd)
     char* b = &s[5];
     char* e = &s[8];
 
-    EXPECT_EQ(2, NumberOfCharactersBetweenDereferencedPointers(s, b, e));
+    EXPECT_EQ(2, NumberOfCharactersBetweenDereferencedPointers(b, e));
 }
 
 TEST(DistanceBetweenPointers, ReturnsZeroIfBeginGreaterThanEnd)
@@ -51,5 +51,5 @@ TEST(DistanceBetweenPointers, ReturnsZeroIfBeginGreaterThanEnd)
     char* b = &s[8];
     char* e = &s[5];
 
-    EXPECT_EQ(0, NumberOfCharactersBetweenDereferencedPointers(s, b, e));
+    EXPECT_EQ(0, NumberOfCharactersBetweenDereferencedPointers(b, e));
 }

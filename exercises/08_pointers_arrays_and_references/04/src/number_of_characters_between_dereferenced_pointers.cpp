@@ -3,7 +3,7 @@
 
 #include <string>
 
-int NumberOfCharactersBetweenDereferencedPointers(const std::string& inspected, char *const begin, char *const end)
+int NumberOfCharactersBetweenDereferencedPointers(char *const begin, char *const end)
 {
     int distance = 0;
 
