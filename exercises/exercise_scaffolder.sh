@@ -13,6 +13,8 @@ mkdir $target
 
 echo "jegyzékek létrehozása (creating directories)..."
 mkdir $target/src $target/include $target/solution $target/test $target/make
+cp $root/makefile_template $target/makefile
 
 echo "leírás létrehozása (creating description)..."
 touch $target/EN_exercise.md $target/HU_gyakorlat.md
+atom $target/EN_exercise.md $target/HU_gyakorlat.md
