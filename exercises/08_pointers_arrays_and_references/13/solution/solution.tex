@@ -1,0 +1,114 @@
+\documentclass{article}
+
+\begin{document}
+ 
+ \section*{Iteration using Indexing}
+ The C++ source code was: 
+ \\
+ \\
+ \texttt{int main() \{} \\
+ \texttt{char* arr = \{ "iteration"\}; int i = 0; while (arr[i]) ++i; }
+ \\
+ \texttt{\}}
+ \\
+ \\
+ Where the corresponding assembly code given by \texttt{objdump -d} was:
+ \\
+ \\
+ \texttt{00000000004004d6 <main>:}
+ \\\texttt{4004d6:	55                   	push   \%rbp}
+ \\\texttt{4004d7:	48 89 e5             	mov    \%rsp,\%rbp}
+ \\\texttt{4004da:	48 c7 45 f8 94 05 40 	movq   \$0x400594,-0x8(\%rbp)}
+ \\\texttt{4004e1:	00 }
+ \\\texttt{4004e2:	c7 45 f4 00 00 00 00 	movl   \$0x0,-0xc(\%rbp)}
+ \\\texttt{4004e9:	8b 45 f4             	mov    -0xc(\%rbp),\%eax}
+ \\\texttt{4004ec:	48 63 d0             	movslq \%eax,\%rdx}
+ \\\texttt{4004ef:	48 8b 45 f8          	mov    -0x8(\%rbp),\%rax}
+ \\\texttt{4004f3:	48 01 d0             	add    \%rdx,\%rax}
+ \\\texttt{4004f6:	0f b6 00             	movzbl (\%rax),\%eax}
+ \\\texttt{4004f9:	84 c0                	test   \%al,\%al}
+ \\\texttt{4004fb:	74 06                	je     400503 <main+0x2d>}
+ \\\texttt{4004fd:	83 45 f4 01          	addl   \$0x1,-0xc(\%rbp)}
+ \\\texttt{400501:	eb e6                	jmp    4004e9 <main+0x13>}
+ \\\texttt{400503:	b8 00 00 00 00       	mov    \$0x0,\%eax}
+ \\\texttt{400508:	5d                   	pop    \%rbp}
+ \\\texttt{400509:	c3                   	retq   }
+ \\\texttt{40050a:	66 0f 1f 44 00 00    	nopw   0x0(\%rax,\%rax,1)}
+
+ \subsection*{Using \texttt{-O2} optimization}
+ \texttt{00000000004003e0 <main>:}
+ \\\texttt{4003e0:	31 c0                	xor    \%eax,\%eax}
+  \\\texttt{4003e2:	c3                   	retq   }
+  \\\texttt{4003e3:	66 2e 0f 1f 84 00 00 	nopw   \%cs:0x0(\%rax,\%rax,1)}
+  \\\texttt{4003ea:	00 00 00 }
+  \\\texttt{4003ed:	0f 1f 00             	nopl   (\%rax)}
+
+ 
+\pagebreak
+
+ \section*{Iteration using Pointers}
+
+ The C++ source code was: 
+ \\
+ \\
+ \texttt{int main() \{} \\
+ \texttt{char* arr = \{ "iteration"\}; char* p = arr; while (*p) ++p;}
+ \\
+ \texttt{\}}
+ \\
+ \\
+ Where the corresponding assembly code given by \texttt{objdump -d} was:
+ \\
+ \\ 
+  \\\texttt{00000000004004d6 <main>:}
+  \\\texttt{4004d6:	55                   	push   \%rbp}
+   \\\texttt{4004d7:	48 89 e5             	mov    \%rsp,\%rbp}
+   \\\texttt{4004da:	48 c7 45 f8 94 05 40 	movq   \$0x400594,-0x8(\%rbp)}
+   \\\texttt{4004e1:	00 }
+   \\\texttt{4004e2:	48 8b 45 f8          	mov    -0x8(\%rbp),\%rax}
+   \\\texttt{4004e6:	48 89 45 f0          	mov    \%rax,-0x10(\%rbp)}
+   \\\texttt{4004ea:	48 8b 45 f0          	mov    -0x10(\%rbp),\%rax}
+   \\\texttt{4004ee:	0f b6 00             	movzbl (\%rax),\%eax}
+   \\\texttt{4004f1:	84 c0                	test   \%al,\%al}
+   \\\texttt{4004f3:	74 07                	je     4004fc <main+0x26>}
+   \\\texttt{4004f5:	48 83 45 f0 01       	addq   \$0x1,-0x10(\%rbp)}
+   \\\texttt{4004fa:	eb ee                	jmp    4004ea <main+0x14>}
+   \\\texttt{4004fc:	b8 00 00 00 00       	mov    \$0x0,\%eax}
+   \\\texttt{400501:	5d                   	pop    \%rbp}
+   \\\texttt{400502:	c3                   	retq   }
+   \\\texttt{400503:	66 2e 0f 1f 84 00 00 	nopw   \%cs:0x0(\%rax,\%rax,1)}
+   \\\texttt{40050a:	00 00 00 }
+   \\\texttt{40050d:	0f 1f 00             	nopl   (\%rax)}
+   
+    \subsection*{Using \texttt{-O2} optimization}
+   \texttt{00000000004003e0 <main>:}
+  \\\texttt{4003e0:	b8 84 05 40 00       	mov    \$0x400584,\%eax}
+  \\\texttt{4003e5:	0f 1f 00             	nopl   (\%rax)}
+  \\\texttt{4003e8:	48 83 c0 01          	add    \$0x1,\%rax}
+  \\\texttt{4003ec:	80 38 00             	cmpb   \$0x0,(\%rax)}
+  \\\texttt{4003ef:	75 f7                	jne    4003e8 <main+0x8>}
+  \\\texttt{4003f1:	31 c0                	xor    \%eax,\%eax}
+  \\\texttt{4003f3:	c3                   	retq}   
+  \\\texttt{4003f4:	66 2e 0f 1f 84 00 00 	nopw   \%cs:0x0(\%rax,\%rax,1)}
+  \\\texttt{4003fb:	00 00 00 }
+  \\\texttt{4003fe:	66 90                	xchg   \%ax,\%ax}
+
+   
+   \pagebreak
+   
+   \section*{Conclusions}
+   According to
+   \\
+   \\\texttt{dt@VPCF11M1E ~/2019/c++11/exercises/08\_pointers\_arrays\_and\_references/13 \$ diff -y --suppress-common-lines solution/pointered.asm solution/indexed.asm}
+   \\
+   and comparing \texttt{*\_optimized.asm}'s using \texttt{-O2}:
+   \\
+   \\
+   \begin{enumerate}
+    \item The compiler will not generate equivalent code for iterating with indices vs. iterating with pointers.
+    \item Using the optimizer will radically reduce the size of the generated code, where  \textsl{iterating with indices is still cheaper} than iterating with pointers.
+   \end{enumerate}
+
+  
+ 
+\end{document}
