@@ -1,0 +1,44 @@
+\documentclass{article}
+
+\begin{document}
+ \section*{Analyzing a non-trivial algorithm}
+ \texttt{void send(int* to, int* from, int count)\\
+    // Duff ’s device. Helpful comment deliberately deleted.\\
+    \{\\
+      n = (count+7)/8;\\
+      switch (count\%8) \{\\
+      case 0: do \{ *to++ = *from++;\\
+      case 7: *to++ = *from++;\\
+      case 6: *to++ = *from++;\\
+      case 5: *to++ = *from++;\\
+      case 4: *to++ = *from++;\\
+      case 3: *to++ = *from++;\\
+      case 2: *to++ = *from++;\\
+      case 1: *to++ = *from++;\\
+        \} while (−−n>0);\\
+      \}\\
+    \}}
+    \\
+    \\
+    \begin{itemize}
+     \item The argument \texttt{count} implies that the source (\texttt{from}) and the destination (\texttt{to}) are arrays of integers,
+     and \texttt{count} indicates the number of integers that needs to be copied (\texttt{send}) to the destinatition (\texttt{to}) array.
+     \item \texttt{(count + 7)} resembles to a positive offset with \textsl{one byte} thus dividing it by $8$ (one byte) results in the number of bytes, \\
+     so \texttt{n is the number of bytes}.
+     \item \texttt{switch (count\%8)} if count was 10 then it would result to 2. This way n would also result to 2 \\
+     ($\Rightarrow (16 + 7) / 8 = 2)$)\\
+     ($\Rightarrow 16\ mod\ 8 = 0$)
+     \item The do-while loop operates \textsl{only if count is the multiply of 8} and while n is not equal to 0. \\
+     Inside the loop as soon as a corresponding case is found ($0$ to start the loop), all the remaining cases are being executed
+     beginning with (\texttt{case 7: *to++ = *from++;} to (\texttt{case 1: *to++ = *from++;}.
+    \end{itemize}
+    
+  \section*{Conclusion}
+  The algorithm above \textsl{sends messages} represented as integers in \textsl{count} packets from destination \textsl{from} to destination \textsl{to}.
+  Count corresponds to the number of packets, whereas one packet must be the multiply of 8. 
+  \\
+  \\
+  A packet is being sent in every iteration.
+
+ 
+\end{document}
