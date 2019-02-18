@@ -1,0 +1,13 @@
+\documentclass{article}
+
+\begin{document}
+ \section*{Undefined order of expression evaluation}
+ \begin{enumerate}
+  \item \texttt{array[i] = i++;} 
+  \item \texttt{int x = f(3) + g(6); }
+  \item \texttt{p = p++; }
+  \item \texttt{f(g() - h() - i());}
+  \item \texttt{array[j++] = j++;}
+ \end{enumerate}
+
+\end{document}
