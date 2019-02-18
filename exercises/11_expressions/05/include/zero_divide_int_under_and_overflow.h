@@ -1,0 +1,6 @@
+#ifndef _ZERO_DIVIDE_INT_UNDER_AND_OVERFLOW_
+#define _ZERO_DIVIDE_INT_UNDER_AND_OVERFLOW_
+
+void WhatHappens();
+
+#endif
