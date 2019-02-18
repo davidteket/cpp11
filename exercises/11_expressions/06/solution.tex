@@ -1,0 +1,19 @@
+\documentclass{article}
+
+\begin{document}
+ \section*{Before parenthesizing}
+      \texttt{*p++}\\
+      \texttt{*−−p}\\
+      \texttt{++a−−}\\
+      \texttt{(int*)p->m}\\
+      \texttt{*p.m}\\
+      \texttt{*a[i]}\\
+      
+\section*{After parenthesizing}
+      \texttt{(*((p)++))}\\
+      \texttt{(*(−−p))}\\
+      \texttt{(++(a−−))}\\
+      \texttt{((int*)(p->m))}\\
+      \texttt{((*(p)).m)}\\
+      \texttt{(*(a[i]))}\\
+\end{document}
